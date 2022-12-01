@@ -1,23 +1,29 @@
 import { useState, useEffect } from 'react';
 import { getAllMemes } from '../lib/api';
+import MemeCard from './MemeCard';
 
 const MemeIndex = () => {
-  const [memes, setMemes] = useState([]);
+  const [memes, setMemes] = useState(null);
 
   useEffect(() => {
     getAllMemes()
-      .then((res) => setMemes(res.data))
+      .then((res) => setMemes(res.data.data.memes))
       .catch((err) => console.error(err));
   }, []);
 
-  if (!memes) {
+  console.log(memes);
+  if (memes === null) {
     return <p>Loading...</p>;
   }
 
   return (
     <section className="section">
       <div className="container">
-        <div className="columns is-multiline">{}</div>
+        <div className="columns is-multiline">
+          {memes.map((meme) => (
+            <MemeCard key={meme.id} {...meme} />
+          ))}
+        </div>
       </div>
     </section>
   );
