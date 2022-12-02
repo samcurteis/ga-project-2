@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { getAllMemes } from '../lib/api';
 import MemeCard from './MemeCard';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const MemeIndex = () => {
   const [memes, setMemes] = useState(null);
-  const [searchQuery, setSearchQuery] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     getAllMemes()
@@ -30,18 +31,17 @@ const MemeIndex = () => {
   // }
 
   return (
-    <section className="section">
-      <div className="container">
-        <div className="columns is-multiline">
-          {memes?.map((meme) => (
-            <Link key={meme.url} to={`/memes/${meme.id}`} state={meme}>
-              <MemeCard key={meme.id} {...meme} />
-            </Link>
-          ))}
-          <img src="https://i.imgflip.com/1ur9b0.jpg"></img>
+    <div className="MemeIndex">
+      <SearchBar value={searchQuery} handleChange={setSearchQuery} />
+      <section className="section">
+        <div className="container">
+          <div className="columns is-multiline">
+            {memes &&
+              filterMemes().map((meme) => <MemeCard key={meme.id} {...meme} />)}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
