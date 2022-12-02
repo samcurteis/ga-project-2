@@ -2,45 +2,50 @@ import { getAllMemes } from '../lib/api';
 import { useState, useEffect } from 'react';
 
 const Home = () => {
-  const [memes, setMemes] = useState(null);
+  const [randomMeme, setRandomMeme] = useState(null);
+  const [randomToggle, setRandomToggle] = useState(true);
+
+  function handleClick() {
+    setRandomToggle(!randomToggle);
+  }
 
   useEffect(() => {
     getAllMemes()
-      .then((res) => setMemes(res.data.data.memes))
+      .then((res) =>
+        setRandomMeme(res.data.data.memes[Math.round(Math.random() * 100)])
+      )
       .catch((err) => console.error(err));
-  });
+  }, [randomToggle]);
 
-  // const getRandomMeme = (memes) => {
-  console.log(memes);
-  // console.log(memes[Math.round(Math.random * memes.length)]);
-  // }
+  console.log(randomMeme);
 
-  if (memes === null) {
+  if (randomMeme === null) {
     return <p>Loading...</p>;
   }
 
   return (
-    <section className="hero is fullheight-with-navbar is-success">
-      <p className="title is-1 has-text-centered has-text-black">
-        {/* <MemeShow /> */}
-        {/* <div className="card">
-          <div className="card-header">
-            <h4 className="card-header-title">{name}</h4>
+    <div className="container is-full-height-minus-navbar">
+      <div className="columns  is-centered ">
+        <div className="column is-one-quarter is-centered ">
+          <div className="card is-centered ">
+            <h4 className="card-header-title is-centered">{randomMeme.name}</h4>
+            <div className="card-image">
+              <figure className="image is-one-third">
+                <img src={randomMeme.url} />
+                <div className="card-footer">
+                  <button
+                    className="card-footer-item is-centered is-2"
+                    onClick={handleClick}
+                  >
+                    Can I have another please?
+                  </button>
+                </div>
+              </figure>
+            </div>
           </div>
-          <div className="card-image">
-            <figure className="image image is-1by1">
-              <img
-                src={url}
-                name={name}
-                loading="lazy"
-                width="255"
-                height="255"
-              />
-            </figure>
-          </div>
-        </div> */}
-      </p>
-    </section>
+        </div>
+      </div>
+    </div>
   );
 };
 
