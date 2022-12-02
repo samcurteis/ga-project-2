@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 
 const MemeIndex = () => {
   const [memes, setMemes] = useState(null);
-  const [searchQuery, setSearchQuery] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     getAllMemes()
