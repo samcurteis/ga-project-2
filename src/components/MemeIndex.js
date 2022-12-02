@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const MemeIndex = () => {
   const [memes, setMemes] = useState(null);
+  const [searchQuery, setSearchQuery] = useState(null);
 
   useEffect(() => {
     getAllMemes()
@@ -12,10 +13,21 @@ const MemeIndex = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  console.log(memes);
   if (memes === null) {
     return <p>Loading...</p>;
   }
+
+  const filterMemes = () => {
+    const regex = new RegExp(searchQuery, 'i');
+    const filteredMemes = memes.filter((meme) => {
+      return meme.name.match(regex);
+    });
+    return filteredMemes;
+  };
+
+  // if (!cheeses) {
+  //   return <Spinner />;
+  // }
 
   return (
     <section className="section">
