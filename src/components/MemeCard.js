@@ -1,25 +1,17 @@
 import { Link } from 'react-router-dom';
 
-const MemeCard = ({ name, url, id }) => (
+const MemeCard = ({ name, url }) => (
   <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-    <Link to={`/memes/${id}`}>
-      <div className="card">
-        <div className="card-header">
-          <h4 className="card-header-title">{name}</h4>
-        </div>
-        <div className="card-image">
-          <figure className="image image is-1by1">
-            <img
-              src={url}
-              name={name}
-              loading="lazy"
-              width="255"
-              height="255"
-            />
-          </figure>
-        </div>
+    <div className="card">
+      <div className="card-header">
+        <h4 className="card-header-title">{name}</h4>
       </div>
-    </Link>
+      <div className="card-image">
+        <figure className="image image is-1by1">
+          <img src={url} name={name} loading="lazy" width="255" height="255" />
+        </figure>
+      </div>
+    </div>
   </div>
 );
 
