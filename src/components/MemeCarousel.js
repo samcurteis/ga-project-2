@@ -1,9 +1,8 @@
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import { getAllMemes } from '../lib/api';
 import { useState, useEffect } from 'react';
-
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
+<link rel="stylesheet" href="carousel.css" />;
 const MemeCarousel = () => {
   const [memes, setMemes] = useState(null);
 
@@ -16,9 +15,38 @@ const MemeCarousel = () => {
 
   return (
     <>
-      <Carousel>
+      <Carousel
+        autoPlay
+        showArrows={true}
+        renderIndicator={(onClickHandler, isSelected, index, label) => {
+          const defStyle = {
+            marginLeft: 20,
+            paddingBottom: 900,
+            color: 'white',
+            cursor: 'pointer'
+          };
+          const style = isSelected
+            ? { ...defStyle, color: 'black' }
+            : { ...defStyle };
+          return (
+            <span
+              style={style}
+              onClick={onClickHandler}
+              onKeyDown={onClickHandler}
+              value={index}
+              key={index}
+              role="button"
+              tabIndex={0}
+              // aria-label={`${label} ${index + 1}`}
+            ></span>
+          );
+        }}
+      >
         {memes?.map((meme) => (
-          <img key={meme.url} src={meme.url} alt={meme.name} />
+          <div key={meme.url}>
+            <p className="legend">{meme.name}</p>
+            <img src={meme.url} alt={meme.name} />
+          </div>
         ))}
       </Carousel>
     </>
