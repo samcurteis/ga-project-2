@@ -18,6 +18,10 @@ const MemeShow = () => {
     return <p>Loading...</p>;
   }
 
+  // handleClick(e) => {
+  //   e.target.[]
+  // }
+
   return (
     <section className="section">
       <p>just testinng</p>
