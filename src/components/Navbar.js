@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import MemeCarousel from './MemeCarousel';
 
 function Navbar() {
   return (
@@ -10,6 +11,10 @@ function Navbar() {
           </Link>
           <Link to="/memes" className="navbar-item">
             Meme Index
+          </Link>
+
+          <Link to="/memes/carousel" className="navbar-item">
+            Meme Carousel
           </Link>
         </div>
       </div>
