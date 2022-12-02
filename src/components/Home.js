@@ -24,28 +24,33 @@ const Home = () => {
   }
 
   return (
-    <div className="container is-full-height-minus-navbar">
-      <div className="columns  is-centered ">
-        <div className="column is-one-quarter is-centered ">
-          <div className="card is-centered ">
-            <h4 className="card-header-title is-centered">{randomMeme.name}</h4>
-            <div className="card-image">
-              <figure className="image is-one-third">
-                <img src={randomMeme.url} />
-                <div className="card-footer">
-                  <button
-                    className="card-footer-item is-centered is-2"
-                    onClick={handleClick}
-                  >
-                    Can I have another please?
-                  </button>
-                </div>
-              </figure>
+    <>
+      <h2>Here&apos;s a meme for you</h2>
+      <div className="container is-full-height-minus-navbar">
+        <div className="columns  is-centered ">
+          <div className="column is-one-third is-centered ">
+            <div className="card is-centered ">
+              <h4 className="card-header-title is-centered">
+                {randomMeme.name}
+              </h4>
+              <div className="card-image">
+                <figure className="image">
+                  <img src={randomMeme.url} />
+                  <div className="card-footer">
+                    <button
+                      className="card-footer-item is-centered is-2"
+                      onClick={handleClick}
+                    >
+                      Can I have another please?
+                    </button>
+                  </div>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

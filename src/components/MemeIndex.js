@@ -34,11 +34,10 @@ const MemeIndex = () => {
       <div className="container">
         <div className="columns is-multiline">
           {memes?.map((meme) => (
-            <Link key={meme.url} to={`/memes/${meme.id}`} state={meme}>
-              <MemeCard key={meme.id} {...meme} />
-            </Link>
+            // <Link key={meme.url} to={`/memes/${meme.id}`} state={meme}>
+            <MemeCard key={meme.id} {...meme} />
+            // </Link>
           ))}
-          <img src="https://i.imgflip.com/1ur9b0.jpg"></img>
         </div>
       </div>
     </section>
