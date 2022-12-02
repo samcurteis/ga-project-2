@@ -13,7 +13,6 @@ const MemeIndex = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  console.log(memes);
   if (memes === null) {
     return <p>Loading...</p>;
   }
