@@ -14,7 +14,7 @@ const MemeCarousel = () => {
   console.log(memes);
 
   return (
-    <div className="container  ">
+    <div className="container">
       <div className="carousel-container">
         <h1 className="title">Memes, on a carousel!</h1>
         <img
