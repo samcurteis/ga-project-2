@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import MemeCarousel from './MemeCarousel';
 
 function Navbar() {
   return (
