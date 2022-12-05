@@ -1,5 +1,6 @@
 import { getAllMemes } from '../lib/api';
 import { useState, useEffect } from 'react';
+import Spinner from './Spinner';
 
 const Home = () => {
   const [randomMeme, setRandomMeme] = useState(null);
@@ -18,7 +19,7 @@ const Home = () => {
   }, [randomToggle]);
 
   if (randomMeme === null) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   return (
