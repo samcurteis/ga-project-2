@@ -3,7 +3,7 @@ import MemeCarousel from './MemeCarousel';
 
 function Navbar() {
   return (
-    <nav className="navbar is-dark">
+    <nav className="navbar is-purple">
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item">

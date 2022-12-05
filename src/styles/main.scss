@@ -1,2 +1,60 @@
 // <link rel="stylesheet" href="carousel.css"/>
 @import '~bulma/bulma.sass'; // ! comment out this line if you DO NOT want to use Bulma
+
+
+// @keyframes Transitioningbackground {
+//   0% {
+//     background-position: 1% 0% 0%;
+//   }
+//   50% {
+//     background-position: 99% 100% 99%;
+//   }
+//   100% {
+//     background-position: 1% 0 0%;
+//   }
+// }
+
+// body {
+//   transition: all 0.5s ease;
+//   background-color: rgb(145, 15, 225);
+//   overflow: hidden;
+//   background-image: (linear-gradient(270deg, rgb(145, 15, 225), rgb(205, 96, 240), rgb(239, 162, 238) ));
+//   background-size: cover;
+// }
+
+
+@keyframes backgroundGradientAnimation {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  to {
+    background-position: 0 50%;
+  }
+}
+
+$purple-one: rgb(145, 15, 225);
+$purple-two: rgb(205, 96, 240);
+$purple-three: rgb(239, 162, 238);
+
+body {
+  background: $purple-one;
+  background: linear-gradient(270deg, $purple-one, $purple-two, $purple-three);
+  background-size: 600% 600%;
+  animation: backgroundGradientAnimation 4s ease infinite;
+}
+
+// h1 {
+//   color: white;
+// }
+
+
+
+
+
+
+
