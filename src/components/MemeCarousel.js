@@ -15,6 +15,8 @@ const MemeCarousel = () => {
 
   return (
     <>
+     <h1 className="title">Memes, on a carousel!</h1>
+      <p>Use your arrow keys to browse the memes</p>
       <Carousel
         loop
         autoPlay
@@ -51,7 +53,7 @@ const MemeCarousel = () => {
           </div>
         ))}
       </Carousel>
-    </>
+    </div>
   );
 };
 

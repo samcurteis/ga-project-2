@@ -1,5 +1,6 @@
 import { getAllMemes } from '../lib/api';
 import { useState, useEffect } from 'react';
+import Spinner from './Spinner';
 
 const Home = () => {
   const [randomMeme, setRandomMeme] = useState(null);
@@ -17,38 +18,38 @@ const Home = () => {
       .catch((err) => console.error(err));
   }, [randomToggle]);
 
-  console.log(randomMeme);
-
   if (randomMeme === null) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   return (
-    <div className="container is-full-height-minus-navbar">
-      <div className="columns  is-centered is">
-        <div className="column is-one-quarter is-centered ">
-          <div className="card is-centered ">
-            <h4 className="card-header-title is-centered has-background-primary has-text-white">
-              {randomMeme.name}
-            </h4>
-            <div className="card-image">
-              <figure className="image is-one-third">
-                <img src={randomMeme.url} />
-                <div className="card-footer">
-                  <button
-                    // className="card-footer-item is-centered is-2"
-                    className="button is-centered is-2 is-primary"
+    <section className="hero is-fullheight-with-navbard">
+      <div className="container home-container is-centered">
+        <h2 className="title is-2">Here&apos;s a meme for you</h2>
+        <p className="subtitle is-centered">Click the meme to have another!</p>
+        <div className="columns">
+          <div className="column ">
+            <div className="card is-centered">
+              <h4 className="card-header-title is-centered">
+                {randomMeme.name}
+              </h4>
+              <div className="card-image home-meme">
+                <figure className="image image">
+                  <img
+                    src={randomMeme.url}
+                    name={randomMeme.name}
+                    loading="lazy"
+                    height="255"
+                    width="255"
                     onClick={handleClick}
-                  >
-                    Can I have another please?
-                  </button>
-                </div>
-              </figure>
+                  />
+                </figure>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
