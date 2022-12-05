@@ -15,13 +15,28 @@ const MemeCarousel = () => {
   console.log(memes);
 
   return (
-    <>
-      <Carousel>
+    <div className="container carousel-container">
+      <h1 className="title">Memes, on a carousel!</h1>
+      <p>Use your arrow keys to browse the memes</p>
+      <Carousel
+        useKeyboardArrows
+        centerMode
+        showIndicators="false"
+        className="carousel"
+      >
         {memes?.map((meme) => (
-          <img key={meme.url} src={meme.url} alt={meme.name} />
+          <div key={meme.id} className="container carousel-item" height={meme}>
+            <p>{meme.name}</p>
+            <img
+              className="carousel-image"
+              key={meme.url}
+              src={meme.url}
+              alt={meme.name}
+            />
+          </div>
         ))}
       </Carousel>
-    </>
+    </div>
   );
 };
 

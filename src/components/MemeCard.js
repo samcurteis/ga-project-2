@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const MemeCard = ({ name, url }) => (
   <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
     <div className="card">
