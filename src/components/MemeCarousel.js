@@ -25,6 +25,7 @@ const MemeCarousel = () => {
         <p>Use your arrow keys to browse the memes</p>
       </div>
       <Carousel
+        className="carousel-box"
         loop
         autoPlay
         useKeyboardArrows

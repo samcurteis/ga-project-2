@@ -1,6 +1,5 @@
 @import '~bulma/bulma.sass'; // ! comment out this line if you DO NOT want to use Bulma
 
-
 @keyframes backgroundGradientAnimation {
   0% {
     background-position: 0 50%;
@@ -20,20 +19,27 @@ $purple-one: rgb(145, 15, 225);
 $purple-two: rgb(205, 96, 240);
 $purple-three: rgb(239, 162, 238);
 
-body {
+body,
+.carousel-box {
   background: $purple-one;
   background: linear-gradient(270deg, $purple-one, $purple-two, $purple-three);
   background-size: 600% 600%;
   animation: backgroundGradientAnimation 4s ease infinite;
 }
 
-.nav-container {
-  background: $gold;
-  width: 100%;
+// h1 {
+//   color: white;
+// }
+
+*,
+.title,
+.hero {
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  color: white;
 }
 
-* {
-  font-family: 'Kdam Thmor Pro', sans-serif;
+.navbar {
+  color: black;
 }
 
 .hero {
@@ -80,12 +86,11 @@ body {
   padding-top: 40px;
 }
 
-.carousel {
-  border: 5px groove rgb(169, 137, 41);
+.carousel-box {
+  // border: 5px groove rgb(169, 137, 41);
   border-radius: 30px;
-  background-color: rgb(231, 189, 59);
+  // background-color: rgb(231, 189, 59);
+  img {
+    border-radius: 30px;
+  }
 }
-
-
-
-
