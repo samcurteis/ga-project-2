@@ -3,6 +3,7 @@ import { getAllMemes } from '../lib/api';
 import MemeCard from './MemeCard';
 // import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import Spinner from './Spinner';
 
 const MemeIndex = () => {
   const [memes, setMemes] = useState(null);
@@ -15,7 +16,7 @@ const MemeIndex = () => {
   }, []);
 
   if (memes === null) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   const filterMemes = () => {
@@ -26,9 +27,9 @@ const MemeIndex = () => {
     return filteredMemes;
   };
 
-  // if (!cheeses) {
-  //   return <Spinner />;
-  // }
+  if (!memes) {
+    return <Spinner />;
+  }
 
   return (
     <div className="MemeIndex">

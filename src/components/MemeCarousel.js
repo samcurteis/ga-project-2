@@ -15,13 +15,16 @@ const MemeCarousel = () => {
 
   return (
     <>
+      <h1 className="title">Memes, on a carousel!</h1>
+      <p>Use your arrow keys to browse the memes</p>
       <Carousel
+        loop
         autoPlay
+        useKeyboardArrows
         showArrows={true}
-        renderIndicator={(onClickHandler, isSelected, index, label) => {
+        renderIndicator={(onClickHandler, isSelected, index) => {
           const defStyle = {
             marginLeft: 20,
-            paddingBottom: 900,
             color: 'white',
             cursor: 'pointer'
           };
@@ -37,15 +40,16 @@ const MemeCarousel = () => {
               key={index}
               role="button"
               tabIndex={0}
-              // aria-label={`${label} ${index + 1}`}
             ></span>
           );
         }}
       >
         {memes?.map((meme) => (
           <div key={meme.url}>
+            <figure className="image is-3by2">
+              <img src={meme.url} alt={meme.name} />
+            </figure>
             <p className="legend">{meme.name}</p>
-            <img src={meme.url} alt={meme.name} />
           </div>
         ))}
       </Carousel>
