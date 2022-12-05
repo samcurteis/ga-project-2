@@ -25,16 +25,19 @@ const Home = () => {
 
   return (
     <div className="container is-full-height-minus-navbar">
-      <div className="columns  is-centered ">
+      <div className="columns  is-centered is">
         <div className="column is-one-quarter is-centered ">
           <div className="card is-centered ">
-            <h4 className="card-header-title is-centered">{randomMeme.name}</h4>
+            <h4 className="card-header-title is-centered has-background-primary has-text-white">
+              {randomMeme.name}
+            </h4>
             <div className="card-image">
               <figure className="image is-one-third">
                 <img src={randomMeme.url} />
                 <div className="card-footer">
                   <button
-                    className="card-footer-item is-centered is-2"
+                    // className="card-footer-item is-centered is-2"
+                    className="button is-centered is-2 is-primary"
                     onClick={handleClick}
                   >
                     Can I have another please?
