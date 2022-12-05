@@ -14,9 +14,22 @@ const MemeCarousel = () => {
   console.log(memes);
 
   return (
+<<<<<<< HEAD
     <div>
       <h1 className="title">Memes, on a carousel!</h1>
       <p>Use your arrow keys to browse the memes</p>
+=======
+    <div className="container">
+      <div className="carousel-container">
+        <h1 className="title">Memes, on a carousel!</h1>
+        <img
+          className="image is-128x128"
+          src="https://media3.giphy.com/media/MwlicVM5EnaxO/giphy.gif?cid=ecf05e47x00spcj788z8t1cq9tbwkyp30zzjm1z5zrqszzyt&rid=giphy.gif&ct=g"
+          alt="carousel"
+        />
+        <p>Use your arrow keys to browse the memes</p>
+      </div>
+>>>>>>> main
       <Carousel
         loop
         autoPlay
@@ -46,7 +59,7 @@ const MemeCarousel = () => {
       >
         {memes?.map((meme) => (
           <div key={meme.url}>
-            <figure className="image is-3by2">
+            <figure className="carousel-item">
               <img src={meme.url} alt={meme.name} />
             </figure>
             <p className="legend">{meme.name}</p>

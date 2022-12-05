@@ -87,11 +87,18 @@ body {
 //   height: 800px;
 // }
 
-.carousel {
-  height: 900px;
+.carousel-item {
+  width: 700px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 280px;
+  padding-top: 40px;
 }
 
-.carousel-item {
-  width: 400px;
-  // height: 900px;
+.carousel {
+  border: 5px groove rgb(169, 137, 41);
+  border-radius: 30px;
+  background-color: rgb(231, 189, 59);
 }
