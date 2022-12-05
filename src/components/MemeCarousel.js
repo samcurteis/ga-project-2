@@ -1,9 +1,8 @@
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import { getAllMemes } from '../lib/api';
 import { useState, useEffect } from 'react';
-
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
+<link rel="stylesheet" href="carousel.css" />;
 const MemeCarousel = () => {
   const [memes, setMemes] = useState(null);
 
@@ -15,24 +14,42 @@ const MemeCarousel = () => {
   console.log(memes);
 
   return (
-    <div className="container carousel-container">
-      <h1 className="title">Memes, on a carousel!</h1>
+    <>
+     <h1 className="title">Memes, on a carousel!</h1>
       <p>Use your arrow keys to browse the memes</p>
       <Carousel
+        loop
+        autoPlay
         useKeyboardArrows
-        centerMode
-        showIndicators="false"
-        className="carousel"
+        showArrows={true}
+        renderIndicator={(onClickHandler, isSelected, index, label) => {
+          const defStyle = {
+            marginLeft: 20,
+            color: 'white',
+            cursor: 'pointer'
+          };
+          const style = isSelected
+            ? { ...defStyle, color: 'black' }
+            : { ...defStyle };
+          return (
+            <span
+              style={style}
+              onClick={onClickHandler}
+              onKeyDown={onClickHandler}
+              value={index}
+              key={index}
+              role="button"
+              tabIndex={0}
+            ></span>
+          );
+        }}
       >
         {memes?.map((meme) => (
-          <div key={meme.id} className="container carousel-item" height={meme}>
-            <p>{meme.name}</p>
-            <img
-              className="carousel-image"
-              key={meme.url}
-              src={meme.url}
-              alt={meme.name}
-            />
+          <div key={meme.url}>
+            <figure className="image is-3by2">
+              <img src={meme.url} alt={meme.name} />
+            </figure>
+            <p className="legend">{meme.name}</p>
           </div>
         ))}
       </Carousel>
