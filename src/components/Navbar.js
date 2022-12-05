@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="navbar is-purple">
-      <div className="container">
+    <nav className="navbar is-dark">
+      <div className="nav-container">
         <div className="navbar-brand">
           <img
             className="py-3 px-2"
