@@ -1,6 +1,5 @@
 @import '~bulma/bulma.sass'; // ! comment out this line if you DO NOT want to use Bulma
 
-
 // @keyframes Transitioningbackground {
 //   0% {
 //     background-position: 1% 0% 0%;
@@ -20,7 +19,6 @@
 //   background-image: (linear-gradient(270deg, rgb(145, 15, 225), rgb(205, 96, 240), rgb(239, 162, 238) ));
 //   background-size: cover;
 // }
-
 
 @keyframes backgroundGradientAnimation {
   0% {
@@ -51,18 +49,11 @@ body {
 //   color: white;
 // }
 
-
-
-
-
-
-
 * {
   font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
 .hero {
-  background-color: blue;
   height: 100vh;
 }
 

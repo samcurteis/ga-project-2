@@ -14,7 +14,7 @@ const MemeCarousel = () => {
   console.log(memes);
 
   return (
-    <>
+    <div>
       <h1 className="title">Memes, on a carousel!</h1>
       <p>Use your arrow keys to browse the memes</p>
       <Carousel
@@ -22,7 +22,7 @@ const MemeCarousel = () => {
         autoPlay
         useKeyboardArrows
         showArrows={true}
-        renderIndicator={(onClickHandler, isSelected, index) => {
+        renderIndicator={(onClickHandler, isSelected, index, label) => {
           const defStyle = {
             marginLeft: 20,
             color: 'white',
@@ -53,7 +53,7 @@ const MemeCarousel = () => {
           </div>
         ))}
       </Carousel>
-    </>
+    </div>
   );
 };
 
