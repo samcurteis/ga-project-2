@@ -14,11 +14,6 @@ const MemeCarousel = () => {
   console.log(memes);
 
   return (
-<<<<<<< HEAD
-    <div>
-      <h1 className="title">Memes, on a carousel!</h1>
-      <p>Use your arrow keys to browse the memes</p>
-=======
     <div className="container">
       <div className="carousel-container">
         <h1 className="title">Memes, on a carousel!</h1>
@@ -29,13 +24,13 @@ const MemeCarousel = () => {
         />
         <p>Use your arrow keys to browse the memes</p>
       </div>
->>>>>>> main
       <Carousel
+        className="carousel-box"
         loop
         autoPlay
         useKeyboardArrows
         showArrows={true}
-        renderIndicator={(onClickHandler, isSelected, index, label) => {
+        renderIndicator={(onClickHandler, isSelected, index) => {
           const defStyle = {
             marginLeft: 20,
             color: 'white',
