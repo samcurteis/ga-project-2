@@ -23,7 +23,7 @@ const Home = () => {
   }
 
   return (
-    <section className="hero is-fullheight-with-navbard">
+    <section className="hero is-fullheight-with-navbar">
       <div className="container home-container is-centered">
         <h2 className="title is-2">Here&apos;s a meme for you</h2>
         <p className="subtitle is-centered">Click the meme to have another!</p>
