@@ -18,7 +18,7 @@ function SearchBar({ value, handleChange }) {
             />
           </div>
           <div className="control">
-            <span className="button is-info is-medium">Search</span>
+            <span className="button is-dark is-info is-medium">Search</span>
           </div>
         </div>
       </div>
