@@ -1,8 +1,25 @@
 # General Assembly Project 2
 
+## Table of Contents
+* [Description](#description)
+    - [Deployment Link](#deployment-link)
+    - [Code Installation](#code-installation)
+    - [Timeframe and Working Team](#timeframe-and-working-team)
+    - [Technologies Used](#technologies-used)
+    - [Brief](#brief)
+* [Planning](#planning)
+* [Building the App](#building-the-app)
+    - [Homepage](#homepage)
+    - [Helping My Peers](#helping-my-peers)
+* [Challenges](#challenges)
+* [Wins](#wins)
+* [Key Takeaways](#key-takeaways)
+* [Bugs](#bugs)
+* [Future Improvements](#future-improvements)
+
 ## Description
 
-Completed in the last two days of our sixth week of the course, and at the end of two weeks looking at React, this short project was an opportunity for us to practise what we had learned in building a front end which interacts with an API. The API that we chose was a memes API, which we used to create a website that implements some of the features that we had been learning to create.
+Completed in the last two days of our sixth week of the course, and at the end of two weeks looking at React.js, this short project was an opportunity for us to practise what we had learned in building a front end which interacts with an API. The API we chose was a memes API, which we used to create a website that implements some of the features we had been learning to create.
 
 ### Deployment Link 
 
@@ -21,7 +38,7 @@ We were given 48 hours to complete this project. Most teams worked in pairs, but
 
 ### Technologies Used
 
-The app was built using React.js and styled using Bulma and SASS. The app also uses packages installed using npm, including axios.
+The app was built using React.js and styled using Bulma and SASS. The app also uses packages installed using npm, including Axios.
 
 ### Brief
 
@@ -50,7 +67,7 @@ We also created a google doc which roughly sketched out a to-do list and how we 
 ## Build Process
 
 In our dividing up of the tasks I had the responsibility of writing out the navbar and the homepage. Both of these tasks were fairly straightforward and did not take much time to complete, as we had practised building similar features previous to starting the project.
-For the navbar I used Bulma as a base for styling, and the Link component from react-router-dom to navigate to the various pages on the site.
+For the navbar, I used Bulma as a base for styling, and the Link component from react-router-dom to navigate to the various pages on the site.
 
 ```
 import { Link } from 'react-router-dom';
@@ -93,7 +110,7 @@ import { Link } from 'react-router-dom';
 
 ### Homepage
 
-My second task was to set up a homepage in which users could grab a random meme from the API. This was also fairly straightforward task, in which I grabbed all images, then used Math.random to set the homepage image as a random image from the API. I embedded this within a useEffect hook which would be called whenever the user clicked on the meme.
+My second task was to set up a homepage in which users could grab a random meme from the API. This was also a fairly straightforward task, in which I grabbed all images, then used `Math.random()` to set the homepage image as a random image from the API. I embedded this within a `useEffect` hook which would be called whenever the user clicked on the meme.
 
 ```
   const [randomMeme, setRandomMeme] = useState(null); 
@@ -116,12 +133,12 @@ My second task was to set up a homepage in which users could grab a random meme 
       }
 ```
 
-### Helping my peers
+### Helping My Peers
 My peers Imogen and Ebrar worked on setting up API calls, and the index page respectively. While my tasks in building the app were fairly straightforward, the other members in my group had some trouble with their tasks, so I also spent a good deal of time helping to troubleshoot these problems.
 
 The most significant of these problems was implementing a carousel into the app. The initial plan was to have the option to click on the memes in the index to enlarge them, and then have the option of clicking through them as they were enlarged. We encountered several problems in implementing this however, as the images did not come in a standard size, some being very large while others were quite small, so coming up with a standard size proved tricky.
 
-We encountered various bugs in which images would not appear, or appear far too large, far too small, or in places we didn’t want them to appear. We used an imported carousel function to swipe through the memes, but struggled to implement this into the index page, so eventually we scrapped enlarging memes and swiping through them on the index page but instead created a new page with the carousel function. Throughout this process I advised my peers on what we could do, looking at their code to find where it might be going wrong. Eventually we found that the code written out for the carousel was meant for a different carousel package, so we found and implemented the correct code.
+We encountered various bugs in which images would not appear, or appeared far too large, far too small, or in places that we didn’t want them to appear. We used an imported carousel function to swipe through the memes but struggled to implement this into the index page, so we scrapped enlarging memes and swiping through them on the index page, and instead created a new page with the carousel function. Throughout this process I advised my peers on what we could do, looking at their code to find where it might be going wrong. Eventually, we found that the code written out for the carousel was meant for a different carousel package, so we found and implemented the correct code.
 
 ## Challenges
 
@@ -132,7 +149,7 @@ As we had previously practised creating React apps, most of the structure of the
 For this project, though I do not feel that the code is particularly strong, I do feel quite proud of various things which pertain to the teamwork side of the project.
 - This was our first group project working together, and when it came to dividing up the work we did not encounter any problems whatsoever.
 - Though it was quite challenging helping others with their bugs, I feel proud of the assistance that I gave to my peers in helping them solve their problems, as well as the fact that I was fairly independent in completing my own tasks.
-- For me personally, I did not encounter any problems with working collaboratively with Git/GitHub.
+- I did not personally encounter any problems when working collaboratively with Git/GitHub.
 - From the start I assumed somewhat of a leading role, in that though we worked on an equal footing, I hosted the project, wrote out the plans, and contributed the most in terms of helping out other members of the team.
 
 ## Key Learnings
@@ -143,7 +160,7 @@ For this project, though I do not feel that the code is particularly strong, I d
 
 ## Bugs
 
-On the meme carousel page at certain widths the images appear slightly off to one side.
+On the meme carousel page at certain widths, the images appear slightly off to one side.
 
 ## Future Improvements
 
