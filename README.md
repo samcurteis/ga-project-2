@@ -69,7 +69,7 @@ We also created a google doc which roughly sketched out a to-do list and how we 
 In our dividing up of the tasks I had the responsibility of writing out the navbar and the homepage. Both of these tasks were fairly straightforward and did not take much time to complete, as we had practised building similar features previous to starting the project.
 For the navbar, I used Bulma as a base for styling, and the Link component from react-router-dom to navigate to the various pages on the site.
 
-```
+```*.js
 import { Link } from 'react-router-dom';
     
      function Navbar() {
@@ -112,7 +112,7 @@ import { Link } from 'react-router-dom';
 
 My second task was to set up a homepage in which users could grab a random meme from the API. This was also a fairly straightforward task, in which I grabbed all images, then used `Math.random()` to set the homepage image as a random image from the API. I embedded this within a `useEffect` hook which would be called whenever the user clicked on the meme.
 
-```
+```*.js
   const [randomMeme, setRandomMeme] = useState(null); 
   const [randomToggle, setRandomToggle] = useState(true);
     
